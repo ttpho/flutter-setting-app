@@ -197,6 +197,21 @@ Remember method `openSettingScreen` will return `Boolean` type.
 1. Create configure Flutter Engine
 
 - open file `AppDelegate.swift` on `Xcode` 
+
+```swift
+
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+  ) -> Bool {
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+```
+
 - define `controller`
 
 ```swift 
