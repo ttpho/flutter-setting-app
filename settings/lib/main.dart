@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:settings/settings_channel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,9 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _onSetting,
         tooltip: 'Settings',
         child: const Icon(Icons.settings),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 
-  void _onSetting() {}
+  Future<void> _onSetting() async {
+    final SettingChannel settingChannel = SettingChannel();
+    await settingChannel.openAppSettingScreen();
+  }
 }
